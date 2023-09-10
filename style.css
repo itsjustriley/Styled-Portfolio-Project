@@ -1,0 +1,390 @@
+/* || Import */
+
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Noto+Emoji&family=M+PLUS+Rounded+1c&family=Poppins&display=swap');
+
+/* || color scheme */
+:root {
+    --pink: #ff006f;
+    --pinkbg: #ff006f3a;
+    --pbo: #ff006f48;
+
+    --blue: #01c3e6;
+    --bluebg: #01c4e63a;
+    --bbo: #01c4e648;
+
+    --orange: #ffa400;
+    --orangebg: #ffa4003a;
+    --obo: #ffa40048;
+}
+
+/* General */
+* {
+    list-style: none;
+}
+body {
+    color: #747474;
+    font-family: 'Anonymous Pro';
+    background-image: url(images/dark-honeycomb.png);
+    background-repeat: repeat;
+    margin:15px;
+    font-size:15px;
+}
+
+abbr {
+    text-decoration:none;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: 'M Plus Rounded 1c';
+    font-weight: bolder;
+    color: #eee;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 25px;
+    font-family: 'Poppins';
+    color: #272727;
+    margin-top: 10px;
+}
+
+h3, h4{
+    font-size: 20px;
+    font-family: 'Poppins';
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+}
+aside, figure, .box {
+    border-style: dotted;
+    border-radius: 25px;
+    border-width: 1px;
+    padding: 15px;
+    margin:15px;
+}
+
+figure{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+figcaption {
+    margin: 1rem;
+}
+
+.gallery {
+    flex-direction: column;
+}
+
+.subtitle {
+    text-align: center;
+    line-height: 2;
+} 
+
+footer a {
+    color: #eee;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.central {
+    text-align:center;
+}
+
+/* || Gridding - AboutMe*/
+
+#aboutme {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "am am am"
+                        "bioh bioh bioh"
+                        "bio bio dm"
+                        "skill skill skill"
+                        "code other hobby"
+                        "sprite sprite sprite"
+}
+#am {
+    grid-area: am;
+}
+#bioh {
+    grid-area: bioh;
+}
+#bio {
+    grid-area: bio;
+}
+#dm {
+    grid-area: dm;
+}
+#coding {
+    grid-area: code;
+}
+#other {
+    grid-area: other;
+}
+#sprite {
+    grid-area: sprite;
+}
+#hobby {
+    grid-area:hobby;
+}
+
+
+/* || Pink-Blue-Yellow h2 - h6 and a */
+.pink h2{
+    text-shadow: 1px 0px var(--pink), 0px 1px var(--pink), -1px 0px var(--pink), 0px -1px var(--pink);
+}
+
+.blue h2{
+    text-shadow: 1px 0px var(--blue), 0px 1px var(--blue), -1px 0px var(--blue), 0px -1px var(--blue);
+}
+
+.orange h2{
+    text-shadow: 1px 0px #ffa400, 0px 1px #ffa400, -1px 0px #ffa400, 0px -1px #ffa400;
+}
+
+.pink h3, .pink h4, .pink h5, .pink h6, .pink a {
+    color:#ff006f;
+}
+
+.blue h3, .blue h4, .blue h5, .blue h6, .blue a {
+    color: var(--blue);
+}
+
+.orange h3, .orange h4, .orange h5, .orange h6, .orange a {
+    color:#ffa400;
+}
+
+
+
+
+/* || Horizontal Lines */
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 50%;
+    border: 1px solid #7474745b
+}
+
+
+/* || Animation */
+@keyframes bounce {
+    0% {transform:
+    translateY(0);}
+    25% {transform:
+        translateY(-2px);}
+    50% {transform:
+        translateY(0);}
+    75% {transform:
+        translateY(2px);}
+    100% {transform:
+        translateY(0);}
+}
+
+/* || Dots */
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #747474;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.dot:hover, .bounce li:hover, .bounce figure:hover > img{
+    animation-name: bounce;
+    animation-timing-function: ease;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.pink.dot {
+    background-color: #ff006f;
+}
+
+.blue.dot {
+    background-color: var(--blue);
+}
+
+.orange.dot {
+    background-color: #ffa400;
+}
+
+/* || Cards */
+
+
+.flexlist {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    text-align: center;
+
+}
+
+
+
+.card, .flexlist li {
+    color: #eee;
+    border: 2px;
+    border-style:groove;
+    box-shadow: 0px 5px 6px 4px #00000093;
+    padding:15px;
+    margin:5px;
+    border-radius: 25px;
+}
+
+.pink .card, .pink .flexlist li{
+    background-color: #ff006f3a;
+    border-color: #ff006f84;
+}
+
+.orange .card, .orange .flexlist li{
+background-color: #ffa4003a;
+border-color: #ffa40048;
+}
+
+
+/* || Navigation */
+
+.navi {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navi li, .swipe li {
+    border-style: groove;
+    box-shadow: 0px 5px 6px 4px #00000093;
+    padding:15px;
+    margin:15px;
+    border-radius: 25px;
+    width:200px;
+    text-align: center;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    transition: 1s;
+    background-size:cover;
+}
+.navi li:hover, .swipe li:hover{
+    background-position: .25px;
+}
+
+.navi li:hover a, .swipe li:hover a {
+    color:#eee;
+}
+
+.navi .pink {
+    background-color: var(--pinkbg);
+    border-color: var(--pbo);
+    background-image: linear-gradient(var(--pink), var(--pink));
+    background-position: -232px;
+}
+
+.navi .blue {
+    background-color: var(--bluebg);
+    border-color: var(--bbo);
+    background-image: linear-gradient(var(--blue), var(--blue));
+    background-position: calc(-232px);
+}
+
+.navi .orange, .swipe li {
+    background-color: var(--orangebg);
+    border-color: var(--obo);
+    background-image: linear-gradient(var(--orange), var(--orange));
+    background-position: calc(-232px);
+}
+
+
+.swipe {
+    display: flex;
+}
+
+/* || Gallery */
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:"bay toby morgan"
+                        "yvonne me mister"
+                        "candor fine gen";
+}
+
+#gallery div {
+    max-width: 100%;
+}
+
+#gallery div img {
+    object-fit:cover;
+    max-width: 100%;
+}
+
+#bay {
+    grid-area: bay;
+}
+#toby {
+    grid-area: toby;
+}
+#yvonne {
+    grid-area: yvonne;
+}
+#morgan {
+    grid-area: morgan;
+}
+#candor {
+    grid-area: candor;
+}
+#mister {
+    grid-area: mister;
+}
+#fine {
+    grid-area: fine;
+}
+#gen {
+    grid-area: gen;
+}
+#me {
+    grid-area: me;
+}
+
+/* 
+|| Requirements
+
+Typography
+    font-family         yes
+    font-size           yes
+    font-weight         yes
+    line-height         yes
+    color               yes
+Layout
+    flex                yes
+    margin              yes
+    padding             yes
+Background
+    background-color    yes
+    border-color        yes
+    border-width        yes
+    border-style        yes
+*/
+/*
+|| Stretch Challenges
+Validate your HTML      yes
+Validate your CSS       yes
+Format and comment      yes
+Add some images         yes
+Feedback/Changes        no
+Publish to GitHub Pages no
+Add  navigation         yes 
+Custom font             yes
+Use 2 different fonts   yes
+*/
